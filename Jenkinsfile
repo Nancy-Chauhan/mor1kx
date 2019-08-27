@@ -8,5 +8,12 @@ openriscPipeline {
 
     job('verilator') {
         job 'verilator'
-    }   
+    }
+
+    job('icarus-cappuccino') {
+        job 'or1k-tests'
+        sim 'icarus'
+        pipeline 'CAPPUCCINO'
+        expectedFailures 'or1k-cy'
+    }
 }
